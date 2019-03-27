@@ -1,4 +1,8 @@
 = form_tag(action: :pay, method: :post) do
   %script.payjp-button{"data-key" => "pk_test_d4bf1e4b2473a5bb7a67d1db",
    src: "https://checkout.pay.jp", :type => "text/javascript"}
-   
+
+= link_to "login", new_user_session_path, class: "btn btn-primary"
+= link_to "signup", new_user_registration_path, class: "btn btn-primary"
+= link_to "signout", destroy_user_session_path, class: "btn btn-primary"
+
