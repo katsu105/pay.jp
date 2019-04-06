@@ -2,6 +2,12 @@
 = link_to "signup", new_user_registration_path, class: "btn btn-primary"
 = link_to "signout", destroy_user_session_path, class: "btn btn-primary"
 
+- if user_signed_in?
+  現在、ユーザー#{current_user.id}でログイン中です
+- else
+  未ログインです
+
+  
 
 %form#charge-form{:action => "/pay", :method => "POST"}
   %span.charge-errors
@@ -13,9 +19,9 @@
   %label 有効期限
   %input.exp_month{:maxlength => "2", :name => "exp_month", :placeholder => "月", :type => "text",id: "payment_card_expire_mm", value: 12}/
   %input.exp_year{:maxlength => "4", :name => "exp_year", :placeholder => "年", :type => "text",id: "payment_card_expire_yy", value: 2022}/
-  %button{:type => "submit", id: "card-save"} 送信
+  %button{:type => "submit", id: "card-save"} 登録
 
-  
+= link_to "商品一覧に移動", products_path, class: "btn btn-info"  
   
   
   
