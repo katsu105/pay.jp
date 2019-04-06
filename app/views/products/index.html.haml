@@ -1,0 +1,25 @@
+#box
+  .card{:style => "width: 18rem;"}
+    %img.card-img-top.bg-g
+    .card-body
+      %h5.card-title 緑の商品
+      %p.card-text 優しい気持ちになれるかもしれない。
+      %p.card-text 1000円
+      %a.btn.btn-primary{:href => "#"} 購入する
+  .card{:style => "width: 18rem;"}
+    %img.card-img-top.bg-y
+    .card-body
+      %h5.card-title 黄の商品
+      %p.card-text 金運UPしそうな予感。
+      %p.card-text 1000円
+      %a.btn.btn-primary{:href => "#"} 購入する
+    
+  .card{:style => "width: 18rem;"}
+    %img.card-img-top.bg-b
+    .card-body
+      %h5.card-title 青の商品
+      %p.card-text 集中力UPしそうな気がする。
+      %p.card-text 1000円
+      %a.btn.btn-primary{:href => "#"} 購入する
+
+= link_to "カード登録画面に戻る", root_path, class: "btn btn-info clerfix"  
