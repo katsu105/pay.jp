@@ -3,16 +3,13 @@ class PaymentsController < ApplicationController
   before_action :set_pay_jp_api_key, only: [:create]
 
   def create
-
     customer_id = current_user.card.customer_id
-  
     charge = Payjp::Charge.create(
     amount: 3500,
     currency: 'jpy',
     customer: customer_id,
     )
-    
-    redirect_to "/"
+    redirect_to "/products"
   end
 
   private

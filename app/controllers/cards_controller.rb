@@ -2,7 +2,6 @@ class CardsController < ApplicationController
   protect_from_forgery :except => [:create]
   before_action :set_pay_jp_api_key, only: [:create, :show]
   def new
-    
   end
 
   def create
