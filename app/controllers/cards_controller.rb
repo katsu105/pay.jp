@@ -1,11 +1,12 @@
 class CardsController < ApplicationController
   protect_from_forgery :except => [:create]
-  before_action :set_pay_jp_api_key, only: [:create]
+  before_action :set_pay_jp_api_key, only: [:create, :show]
   def new
     
   end
 
   def create
+    # トークンIDと顧客データを生成し、紐つける
     customer = Payjp::Customer.create(
       description: 'test',
       card: params[:pay_id]
@@ -17,6 +18,12 @@ class CardsController < ApplicationController
     card.save
   end
 
+  def show
+    binding.pry
+    # 顧客データを取得できるかテスト
+    customer_id = current_user.card.customer_id
+    customer = Payjp::Customer.retrieve(customer_id)
+  end
   private
 
   def card_params
