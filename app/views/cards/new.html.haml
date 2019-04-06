@@ -21,7 +21,9 @@
   %input.exp_year{:maxlength => "4", :name => "exp_year", :placeholder => "年", :type => "text",id: "payment_card_expire_yy", value: 2022}/
   %button{:type => "submit", id: "card-save"} 登録
 
-= link_to "商品一覧に移動", products_path, class: "btn btn-info"  
+= link_to "商品一覧に移動", products_path, class: "btn btn-info"
+
+= link_to "カード情報を取得", cards_show_path, class: "btn btn-info"
   
   
   
